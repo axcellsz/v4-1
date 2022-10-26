@@ -314,6 +314,7 @@ wget -O xp "https://raw.githubusercontent.com/artanodrop/v4/main/ssh/xp.sh"
 wget -O acs-set "https://raw.githubusercontent.com/artanodrop/v4/main/acs-set.sh"
 
 wget -O sshws "https://raw.githubusercontent.com/artanodrop/v4/main/ssh/sshws.sh"
+wget -O status "https://raw.githubusercontent.com/artanodrop/v4/main/status.sh"
 
 chmod +x menu
 chmod +x menu-vmess
@@ -353,6 +354,7 @@ chmod +x port-ovpn
 chmod +x xp
 chmod +x acs-set
 chmod +x sshws
+chmod +x status
 cd
 
 
