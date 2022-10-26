@@ -43,3 +43,6 @@ echo -e "   Username Doesnt Exist      "
 echo -e ""
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 fi
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+
