@@ -65,48 +65,50 @@ freq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
 tram=$( free -m | awk 'NR==2 {print $2}' )
 uram=$( free -m | awk 'NR==2 {print $3}' )
 fram=$( free -m | awk 'NR==2 {print $4}' )
-# STATUS SERVICE  SSH 
-if [[ $ssh_service == "running" ]]; then 
-   status_ssh=" ${GREEN}ON ${NC}"
+# // SSH Websocket Proxy
+ssh_ws=$( systemctl status ws-stunnel | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $ssh_ws == "running" ]]; then
+    status_ws_epro="${GREEN}ON${NC}"
 else
-   status_ssh="${RED}OFF${NC}"
+    status_ws_epro="${red}OFF${NC}"
 fi
-# STATUS SERVICE NON TLS V2RAY
-if [[ $nontls_v2ray_status == "running" ]]; then 
-   status_nontls_v2ray=" ${GREEN}ON${NC}"
+# // Trojan Proxy
+ss=$( systemctl status xray | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
+if [[ $ss == "running" ]]; then
+    status_ss="${GREEN}ON${NC}"
 else
-   status_nontls_v2ray="${RED}OFF${NC}"
+    status_ss="${red}OFF${NC}"
 fi
 nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
 if [[ $nginx == "running" ]]; then
     status_nginx="${GREEN}ON${NC}"
 else
-    status_nginx="${RED}OFF${NC}"
+    status_nginx="${red}OFF${NC}"
 fi
 
 clear 
 echo -e "\e[33m                                                            \e[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \E[40;1;37m              • BIGETRON RED ALIEND •             \E[0m"
+echo -e " \E[40;1;37m    \033[1;31m          • BIGETRON RED ALIEND •             \E[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "      SCRIPT FREE ADAM SIJA MOD BY ARTA MAULANA"
-echo -e "  [SSH  : $status_ssh ] [X-RAY  :  $status_nontls_v2ray ] [NGINX. :  $status_nginx ]"
+echo -e "\033[1;36m      SCRIPT FREE ADAM SIJA MOD BY ARTA MAULANA${NC}"
+echo -e "  [ SSH : $status_ws_epro ] [ X-RAY :  $status_ss ] [ NGINX :  $status_nginx ]"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\e[33m Operating System     \e[0m:  "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	
-echo -e "\e[33m Total Amount Of RAM  \e[0m:  $tram MB"
+echo -e "\e[33m Operating System     \e[0m: \033[1;32m "`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`	${NC}
+echo -e "\e[33m Total Amount Of RAM  \e[0m: \033[1;32m $tram MB ${NC}"
 echo -e "\e[33m System Uptime        \e[0m:  $uptime "
 echo -e "\e[33m Isp Name             \e[0m:  $ISP"
-echo -e "\e[33m Domain               \e[0m:  $domain"	
+echo -e "\e[33m Domain               \e[0m: \033[1;36m  $domain ${NC}"	
 echo -e "\e[33m Ip Vps               \e[0m:  $IPVPS"	
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \E[40;1;37m                 • SCRIPT MENU •                  \E[0m"
+echo -e " \E[40;1;37m    \033[1;31m             • SCRIPT MENU •                  \E[0m"
 echo -e "\e[33m ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " [\e[36m•1\e[0m] SSH & OpenVPN Menu  [\e[36m•5\e[0m] SYSTEM Menu"
 echo -e " [\e[36m•2\e[0m] Vmess Menu          [\e[36m•6\e[0m] Status Service"
 echo -e " [\e[36m•3\e[0m] Vless Menu          [\e[36m•7\e[0m] Clear RAM Cache"
 echo -e " [\e[36m•4\e[0m] Trojan Go Menu      [\e[36m•8\e[0m] Trojan GFW Menu"                  
 echo -e   ""
-echo -e   " Press x or [ Ctrl+C ] • To-Exit-Script"
+echo -e   " \033[1;33m Press x or [ Ctrl+C ] • To-Exit-Script ${NC}"
 echo -e   ""
 echo -e   ""
 read -p " Select menu :  "  opt
