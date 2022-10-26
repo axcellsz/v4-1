@@ -54,3 +54,6 @@ echo "$oth";
 echo "----------------------------------------"
 echo "Script Mod By ARTA M"
 rm -rf /tmp/other.txt
+read -n 1 -s -r -p "Press any key to back on menu"
+menu
+
