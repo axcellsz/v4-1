@@ -389,11 +389,5 @@ rm /root/insshws.sh >/dev/null 2>&1
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
 echo -e "
 "
-echo -ne "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "
-read answer
-if [ "$answer" == "${answer#[Yy]}" ] ;then
-exit 0
-else
+read -n 1 -s -r -p "Press any key to reboot"
 reboot
-fi
-
