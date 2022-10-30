@@ -94,6 +94,7 @@ else
 fi
 
 # // Checking Script Expired
+Nama=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $License_Key | cut -d ' ' -f 9-100 | tr -d '\r' | tr -d '\r\n')
 exp=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $Your_License_Key | cut -d ' ' -f 4 )
 now=`date -d "0 days" +"%Y-%m-%d"`
 expired_date=$(date -d "$exp" +%s)
@@ -220,7 +221,7 @@ echo -e " [\e[36m•3\e[0m] Vless Menu          [\e[36m•7\e[0m] Clear RAM Cach
 echo -e " [\e[36m•4\e[0m] Trojan Go Menu      [\e[36m•8\e[0m] Trojan GFW Menu"                  
 echo -e   ""
 echo -e "\e[33m┌─────────────────────────────────────────────────┐$NC"
-echo -e "\e[33m│ Client Name :$NC \033[1;32m$Nama_Issued_License ${NC}"
+echo -e "\e[33m│ Client Name :$NC \033[1;32m$Nama ${NC}"
     echo -e "\e[33m│ Exp License :$NC \033[1;32m$sisa_hari ${NC}Days"
 echo -e "\e[33m└─────────────────────────────────────────────────┘$NC"
 echo -e   " \033[1;33m Press x or [ Ctrl+C ] • To-Exit-Script ${NC}"
