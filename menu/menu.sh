@@ -50,6 +50,13 @@ fi
 # // Exporting IP Address
 export IP=$( curl -s https://ipinfo.io/ip/ )
 
+# // License Key Detail
+export Tanggal_Pembelian_License=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $License_Key | cut -d ' ' -f 3 | tr -d '\r' | tr -d '\r\n')
+export Nama_Issued_License=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $License_Key | cut -d ' ' -f 9-100 | tr -d '\r' | tr -d '\r\n')
+export Masa_Laku_License_Berlaku_Sampai=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $License_Key | cut -d ' ' -f 4 | tr -d '\r' | tr -d '\r\n')
+export Install_Limit=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $License_Key | cut -d ' ' -f 2 | tr -d '\r' | tr -d '\r\n')
+export Tipe_License=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $License_Key | cut -d ' ' -f 8 | tr -d '\r' | tr -d '\r\n')
+
 # // Exporting Network Interface
 export NETWORK_IFACE="$(ip route show to default | awk '{print $5}')"
 
@@ -214,7 +221,7 @@ echo -e " [\e[36m•4\e[0m] Trojan Go Menu      [\e[36m•8\e[0m] Trojan GFW Men
 echo -e   ""
 echo -e "\e[33m┌─────────────────────────────────────────────────┐$NC"
 echo -e "\e[33m│ Client Name :$NC \033[1;32m$Nama_Issued_License ${NC}"
-    echo -e "\e[33m│ Exp License :$NC \033[1;32m$sisa_hari ${NC}Day"
+    echo -e "\e[33m│ Exp License :$NC \033[1;32m$sisa_hari ${NC}Days"
 echo -e "\e[33m└─────────────────────────────────────────────────┘$NC"
 echo -e   " \033[1;33m Press x or [ Ctrl+C ] • To-Exit-Script ${NC}"
 echo -e   ""
