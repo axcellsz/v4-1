@@ -94,7 +94,7 @@ else
 fi
 
 # // Checking Script Expired
-Nama=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $License_Key | cut -d ' ' -f 9-100 | tr -d '\r' | tr -d '\r\n')
+Nama=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $Your_License_Key | cut -d ' ' -f 9-100 )
 exp=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $Your_License_Key | cut -d ' ' -f 4 )
 now=`date -d "0 days" +"%Y-%m-%d"`
 expired_date=$(date -d "$exp" +%s)
