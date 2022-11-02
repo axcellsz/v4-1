@@ -94,6 +94,7 @@ else
 fi
 
 # // Checking Script Expired
+Isadmin=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $Your_License_Key | cut -d ' ' -f 8 )
 Nama=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $Your_License_Key | cut -d ' ' -f 9-100 )
 exp=$( curl -s https://${Server_URL}/validated-registered-license-key.txt | grep -w $Your_License_Key | cut -d ' ' -f 4 )
 now=`date -d "0 days" +"%Y-%m-%d"`
@@ -197,6 +198,11 @@ if [[ $nginx == "running" ]]; then
 else
     status_nginx="${red}OFF${NC}"
 fi
+if [ "$Isadmin" = "Pro" ]; then
+uis="${GREEN}Premium User$NC"
+else
+uis="${red}Free Version$NC"
+fi
 
 clear 
 echo -e "\e[33m                                                            \e[0m"
@@ -222,6 +228,7 @@ echo -e " [\e[36m•4\e[0m] Trojan Go Menu      [\e[36m•8\e[0m] Trojan GFW Men
 echo -e   ""
 echo -e "\e[33m┌─────────────────────────────────────────────────┐$NC"
 echo -e "\e[33m│ Client Name :$NC \033[1;32m$Nama ${NC}"
+echo -e "\e[33m│ User Roles  :${NC} $uis"
     echo -e "\e[33m│ Exp License :$NC \033[1;32m$sisa_hari ${NC}Days"
 echo -e "\e[33m└─────────────────────────────────────────────────┘$NC"
 echo -e   " \033[1;33m Press x or [ Ctrl+C ] • To-Exit-Script ${NC}"
