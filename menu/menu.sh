@@ -199,9 +199,9 @@ else
     status_nginx="${red}OFF${NC}"
 fi
 if [ "$Isadmin" = "Pro" ]; then
-uis="${GREEN}Premium User$NC"
+uis="${\033[1;32m}Premium User$NC"
 else
-uis="${red}Free Version$NC"
+uis="${\033[1;31m}Free Version$NC"
 fi
 
 clear 
@@ -229,7 +229,7 @@ echo -e   ""
 echo -e "\e[33m┌─────────────────────────────────────────────────┐$NC"
 echo -e "\e[33m│ Client Name :$NC \033[1;32m$Nama ${NC}"
 echo -e "\e[33m│ User Roles  :${NC} $uis"
-    echo -e "\e[33m│ Exp License :$NC \033[1;32m$sisa_hari ${NC}Days"
+    echo -e "\e[33m│ Exp License :$NC \033[1;32m$sisa_hari ${NC}Days Tersisa"
 echo -e "\e[33m└─────────────────────────────────────────────────┘$NC"
 echo -e   " \033[1;33m Press x or [ Ctrl+C ] • To-Exit-Script ${NC}"
 echo -e   ""
