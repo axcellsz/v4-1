@@ -199,9 +199,9 @@ else
     status_nginx="${red}OFF${NC}"
 fi
 if [ "$Isadmin" = "Pro" ]; then
-uis="${\033[1;32m}Premium User$NC"
+uis="${GREEN}Premium User$NC"
 else
-uis="${\033[1;31m}Free Version$NC"
+uis="${red}Free Version$NC"
 fi
 
 clear 
@@ -228,7 +228,7 @@ echo -e " [\e[36m•4\e[0m] Trojan Go Menu      [\e[36m•8\e[0m] Trojan GFW Men
 echo -e   ""
 echo -e "\e[33m┌─────────────────────────────────────────────────┐$NC"
 echo -e "\e[33m│ Client Name :$NC \033[1;32m$Nama ${NC}"
-echo -e "\e[33m│ User Roles  :${NC} $uis"
+echo -e "\e[33m│ User Roles  :${NC} \033[1;32m$uis ${NC}"
     echo -e "\e[33m│ Exp License :$NC \033[1;32m$sisa_hari ${NC}Days Tersisa"
 echo -e "\e[33m└─────────────────────────────────────────────────┘$NC"
 echo -e   " \033[1;33m Press x or [ Ctrl+C ] • To-Exit-Script ${NC}"
