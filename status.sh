@@ -132,8 +132,8 @@ clear;clear;clear
 
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo -e "                ${YELLOW}(${NC}${GREEN} STATUS SERVICE INFORMATION ${NC}${YELLOW})${NC}"
-echo -e "         OWNER : ${GREEN}ADAM SIJA ${NC}${YELLOW}(${NC} ${GREEN}ARTA MAULANA ${NC}${YELLOW})${NC}"
-echo -e "       © Copyright By OTTIN NETWORK ${YELLOW}(${NC} 2021-2022 ${YELLOW})${NC}"
+echo -e "         OWNER : ${GREEN}DZIKRA & ZIKRI ${NC}${YELLOW}(${NC} ${GREEN} FIKRI & REYHAN ${NC}${YELLOW})${NC}"
+echo -e "       © Copyright By ARTA MAULANA ${YELLOW}(${NC} 2022-2023 ${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
 echo -e "${RED_BG}                     Sytem Information                    ${NC}"
