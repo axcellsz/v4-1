@@ -1,4 +1,8 @@
 #!/bin/bash
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+#########################
+clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^#! " "/etc/xray/config.json")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 echo -e "$COLOR1┌─────────────────────────────────────────────────┐${NC}"
