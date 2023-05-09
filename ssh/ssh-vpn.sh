@@ -320,6 +320,8 @@ wget -O menu-bckp "https://raw.githubusercontent.com/artanodrop/v4/main/menu/men
 wget -O backup "https://raw.githubusercontent.com/artanodrop/v4/main/backup/backup.sh"
 wget -O restore "https://raw.githubusercontent.com/artanodrop/v4/main/backup/restore.sh"
 
+wget -O jam "https://raw.githubusercontent.com/artanodrop/v4/main/jam.sh"
+
 chmod +x menu
 chmod +x menu-trial
 chmod +x menu-vmess
@@ -363,6 +365,7 @@ chmod +x status
 chmod +x menu-bckp
 chmod +x backup
 chmod +x restore
+chmod +x jam
 cd
 
 
