@@ -245,11 +245,7 @@ echo -e "${BICyan} ┌───────────────────�
 echo -e "${BICyan} │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
 echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
-if [[ $sem == $pak ]]; then
-        echo -e " ${BICyan}│  Version      ${NC} : $pak Last Update"
-    else
-        echo -e " ${BIWhite}│${NC}${BIRed}  Type 6969 To Update${NC}"
-fi
+echo -e " ${BICyan}│  Version      ${NC} : v3. Last Update"
 echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m $Name \e[0m"
 echo -e " ${BICyan}│  Expiry script${NC} : ${BIYellow}$Exp${NC} Days"
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
