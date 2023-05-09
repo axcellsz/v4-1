@@ -272,6 +272,7 @@ netfilter-persistent reload
 cd /usr/bin
 # menu
 wget -O menu "https://raw.githubusercontent.com/artanodrop/v4/main/menu/menu.sh"
+wget -O menu-trial "https://raw.githubusercontent.com/artanodrop/v4/main/menu/menu-trial.sh"
 wget -O menu-vmess "https://raw.githubusercontent.com/artanodrop/v4/main/menu/menu-vmess.sh"
 wget -O menu-vless "https://raw.githubusercontent.com/artanodrop/v4/main/menu/menu-vless.sh"
 wget -O running "https://raw.githubusercontent.com/artanodrop/v4/main/menu/running.sh"
@@ -315,8 +316,12 @@ wget -O acs-set "https://raw.githubusercontent.com/artanodrop/v4/main/acs-set.sh
 
 wget -O sshws "https://raw.githubusercontent.com/artanodrop/v4/main/ssh/sshws.sh"
 wget -O status "https://raw.githubusercontent.com/artanodrop/v4/main/status.sh"
+wget -O menu-bckp "https://raw.githubusercontent.com/artanodrop/v4/main/menu/menu-bckp.sh"
+wget -O backup "https://raw.githubusercontent.com/artanodrop/v4/main/backup/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/artanodrop/v4/main/backup/restore.sh"
 
 chmod +x menu
+chmod +x menu-trial
 chmod +x menu-vmess
 chmod +x menu-vless
 chmod +x running
@@ -355,6 +360,9 @@ chmod +x xp
 chmod +x acs-set
 chmod +x sshws
 chmod +x status
+chmod +x menu-bckp
+chmod +x backup
+chmod +x restore
 cd
 
 
