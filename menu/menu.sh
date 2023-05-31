@@ -278,8 +278,8 @@ case $opt in
 5) clear ; menu-set ;;
 6) clear ; menu-trial ;;
 7) clear ; menu-bckp ;;
-8) clear ; addhost ;;
-9) clear ; genssl ;;
+8) clear ; add-host ;;
+9) clear ; certv2ray ;;
 10) clear ; clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
 6969) clear ; wget https://raw.githubusercontent.com/artanodrop/v4/main/update.sh && chmod +x update.sh && ./update.sh && rm -f /root/update.sh ;;
 0) clear ; menu ;;
