@@ -56,6 +56,20 @@ else
 Exp=$(curl -sS https://raw.githubusercontent.com/artanodrop/permission/main/ipmini | grep $MYIP | awk '{print $3}')
 fi
 
+# =========================================
+vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
+let vla=$vlx/2
+vmc=$(grep -c -E "^### " "/etc/xray/config.json")
+let vma=$vmc/2
+ssh1="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
+
+trx=$(grep -c -E "^#! " "/etc/xray/config.json")
+let tra=$trx/2
+ssx=$(grep -c -E "^## " "/etc/xray/config.json")
+let ssa=$ssx/2
+
+UDPX="https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1S3IE25v_fyUfCLslnujFBSBMNunDHDk2"
+# // Exporting Language to UTF-8
 BIBlack='\033[1;90m'      # Black
 BIRed='\033[1;91m'        # Red
 BIGreen='\033[1;92m'      # Green
@@ -224,7 +238,7 @@ echo -e "                         ${BIWhite}${UWhite}About${NC}"
 echo -e "                 ${BICyan}Base Script : ${BIPurple}Horassss${NC}"
 echo -e "                 ${BICyan}Bot Dev     : ${BIPurple}@xolvadev${NC}"
 echo -e "                 ${BICyan}Decodec     :${BIPurple} @boootzzzz${NC}"
-echo -e "                 ${BICyan}${On_IPurple}Tanks To All My ${UWhite}Friends ${NC}"
+echo -e "               ${BICyan}${On_IPurple} SCRIPT MULTI VER.3 STABILE ${UWhite}${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │                  ${BIWhite}${UWhite}Server Informations${NC}"
 echo -e "${BICyan} │"
@@ -239,13 +253,17 @@ echo -e "     ${BICyan}[${BIWhite}01${BICyan}] SSH     ${BICyan}[${BIYellow}Menu
 echo -e "     ${BICyan}[${BIWhite}02${BICyan}] VMESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "     ${BICyan}[${BIWhite}07${BICyan}] BACKUP    ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}   │"
 echo -e "     ${BICyan}[${BIWhite}03${BICyan}] VLESS   ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "     ${BICyan}[${BIWhite}08${BICyan}] ADD-HOST      ${NC}" "${BICyan}     │"
 echo -e "     ${BICyan}[${BIWhite}04${BICyan}] TROJAN  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "     ${BICyan}[${BIWhite}09${BICyan}] GEN SSL             │"
-echo -e "     ${BICyan}[${BIWhite}05${BICyan}] SETING  ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "     ${BICyan}[${BIWhite}10${BICyan}] SET REBOOT${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}   │${NC}"
+echo -e "     ${BICyan}[${BIWhite}05${BICyan}] SETTING ${BICyan}[${BIYellow}Menu${BICyan}]${NC}"  "     ${BICyan}[${BIWhite}10${BICyan}] INSTAL UDP${BICyan}[${BIYellow}Menu${BICyan}]${NC}" "${BICyan}   │${NC}"
 echo -e " ${BICyan}└─────────────────────────────────────────────────────┘${NC}"
+echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
+echo -e "${BICyan} │  \033[0m ${BOLD}${GREEN}XXX${BIYellow} SSH${GREEN}  XXX  ${BIYellow}VMESS  ${GREEN}XXX  ${BIYellow}VLESS  ${GREEN}XXX  ${BIYellow}TROJAN${GREEN} XXX $NC "
+echo -e "${BICyan} │  \033[0m ${Blue}     $ssh1         $vma           $vla           $tra              $NC"
+echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
 echo -e "${BICyan} ┌─────────────────────────────────────────────────────┐${NC}"
 echo -e "${BICyan} │$NC ${BICyan}HARI ini${NC}: ${red}$ttoday$NC ${BICyan}KEMARIN${NC}: ${red}$tyest$NC ${BICyan}BULAN${NC}: ${red}$tmon$NC $NC"
 echo -e "${BICyan} └─────────────────────────────────────────────────────┘${NC}"
 echo -e " ${BICyan}┌─────────────────────────────────────┐${NC}"
-echo -e " ${BICyan}│  Version      ${NC} : v3. Last Update"
+echo -e " ${BICyan}│  Version      ${NC} : Ver3. Last Update"
 echo -e " ${BICyan}│  User       ${NC}   :\033[1;36m $Name \e[0m"
 echo -e " ${BICyan}│  Expiry script${NC} : ${BIYellow}$Exp${NC} Days"
 echo -e " ${BICyan}└─────────────────────────────────────┘${NC}"
@@ -262,8 +280,8 @@ case $opt in
 7) clear ; menu-bckp ;;
 8) clear ; addhost ;;
 9) clear ; genssl ;;
-10) clear ; jam ;;
-6969) clear ; wget https://raw.githubusercontent.com/tridebleng/suci/main/update.sh && chmod +x update.sh && ./update.sh && rm -f /root/update.sh ;;
+10) clear ; clear ; wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp ;;
+6969) clear ; wget https://raw.githubusercontent.com/artanodrop/v4/main/update.sh && chmod +x update.sh && ./update.sh && rm -f /root/update.sh ;;
 0) clear ; menu ;;
 x) exit ;;
 *) echo -e "" ; echo "Press any key to back exit" ; sleep 1 ; exit ;;
